@@ -22,7 +22,12 @@ end
 
 gem 'jquery-rails'
 
-gem "railroady"
+# ER - Diagram 
+gem 'railroady'
+
+# Bootstrap 
+
+gem 'bootstrap-sass' , '~> 2.3.2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
