@@ -1,42 +1,138 @@
 <%= form_for(@auditinit) do |f| %>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">Create New Audit</div>
+  	<div class="panel-body">
+   		<div class="col-xs-12 col-sm-6 col-md-8 col-lg-offset-1">
+    		<ul class="nav nav-tabs">
+    			<li class="active"><a href="#organization" data-toggle="tab">Audit Info</a></li>
+  				<li><a href="#client" data-toggle="tab">Client Info</a></li>
+  				<li><a href="#team" data-toggle="tab">Team Info</a></li>
+  				<li class="pull-right"><%= f.submit 'Submit',  :class => "btn btn-success btn-sm" %></li>
+    		</ul>
+		
+			<div class="tab-content">
+				<div class="tab-pane active" id="organization">
+    				<div class="form-inputs">
+    				  <div class="input-sm">
+        				  <div class="col-lg-12">
+					    	<%= f.label "Audit Title" %>
+							<%= f.text_field :title, :class =>  "form-control" %>
+				    	  </div>
+			        	</div>
+    				   <br/><br/>
+    				   <div class="input-sm">
+        				   <div class="col-lg-12">
+    						   <%= f.label "Audit Purpose" %>
+							   <%= f.text_area :purpose , :rows => 5, :cols => 25 , :class =>  "form-control" %>
+   			    		    </div>
+    					</div>
+    					<br/><br/>
+    					<div class="input-sm">
+         					<div class="col-lg-12">
+      							<%= f.label "Audit Scope" %>
+								<%= f.text_area :scope , :rows => 5, :cols => 25 ,    :class =>  "form-control" %>
+      						</div>
+      					</div>
+      					<br/><br/>
+      					<div class="input-sm">
+          					<div class="col-lg-12">
+      							<%= f.label "Audit Summary" %>
+								<%= f.text_area :summary , :rows => 5, :cols => 25 ,    :class =>  "form-control"%>
+						    </div>
+      					</div>
+       					<br/><br/>                   
+    				</div>
+				</div>
+
+				<div class="tab-pane" id="client">
+    				<div class="form-inputs">
+    				  <div class="input-sm">
+        				  <div class="col-lg-12">
+					    	<%= f.label "Type" %>
+							<%= f.text_field :a_type  ,:class =>  "form-control input-sm" %>
+				    	  </div>
+			        	</div>
+    				   <br/><br/>
+    				   <div class="input-sm">
+        				   <div class="col-lg-12">
+    						<%= f.label "Department" %>
+							<%= f.text_field :location  ,:class =>  "form-control" %>  
+   			    		    </div>
+    					</div>
+    					<br/><br/>
+    					<div class="input-sm">
+         					<div class="col-lg-12">
+							   <%= f.label "Start Date" %>
+							   <%= f.text_field :start_date  ,:class =>  "form-control"%>
+      						</div>
+      					</div>
+      					<br/><br/>
+      					<div class="input-sm">
+          					<div class="col-lg-12">						
+								<%= f.label "End Date " %>
+								<%= f.text_field :end_date  ,:class =>  "form-control" %>	
+						    </div>
+      					</div>
+       					<br/><br/>                   
+    				</div>
+				</div>
+
+				<div class="tab-pane" id="team">
+    				<div class="form-inputs">
+    				  <div class="input-sm">
+        				  <div class="col-lg-12">
+					    	<%= f.label "Auditor Name" %>
+							<%= f.text_field :auditor_name   ,:class =>  "form-control"%>
+				    	  </div>
+			        	</div>
+    				   <br/><br/>
+    				   <div class="input-sm">
+        				   <div class="col-lg-12">
+							<%= f.label "Auditor Email" %>
+							<%= f.text_field :auditor_email  ,:class =>  "form-control"%>
+   			    		    </div>
+    					</div>
+    					<br/><br/>
+    					<div class="input-sm">
+         					<div class="col-lg-12">
+							   <%= f.label "Auditee Name" %>
+							   <%= f.text_field :auditee_name ,:class =>  "form-control" %>
+      						</div>
+      					</div>
+      					<br/><br/>
+      					<div class="input-sm">
+          					<div class="col-lg-12">						
+								<%= f.label "Auditee Email" %>
+								<%= f.text_field :auditee_email ,:class =>  "form-control" %>
+						    </div>
+      					</div>
+       					<br/><br/>                   
+    				</div>
+				</div>
+
+    		</div>
+		</div>
+	</div>
+</div>
+
+
  
-	<%= f.label "Audit Title" %>
-	<%= f.text_field :title %>
 
-	<%= f.label "Audit Purpose" %>
-	<%= f.text_field :purpose %>
+ 
+	
+	
 
-	<%= f.label "Audit Scope" %>
-	<%= f.text_field :scope %>
+	
+	
+	
 
-	<%= f.label "Audit Summary" %>
-	<%= f.text_field :summary %>
+	
+	
+	
 
-	<%= f.label "Type" %>
-	<%= f.text_field :a_type %>
+	
 
-	<%= f.label "Department" %>
-	<%= f.text_field :location %> 
-
-	<%= f.label "Auditor Name" %>
-	<%= f.text_field :auditor_name %>
-
-	<%= f.label "Auditor Email" %>
-	<%= f.text_field :auditor_email %>
-
-	<%= f.label "Auditee Name" %>
-	<%= f.text_field :auditee_name %>
-
-	<%= f.label "Auditee Email" %>
-	<%= f.text_field :auditee_email %>
-
-	<%= f.label "Start Date" %>
-	<%= f.text_field :start_date %>
-
-	<%= f.label "End Date " %>
-	<%= f.text_field :end_date %>
-	<br/>
-
-	<%= f.submit %>
+	
 
 <% end %>
