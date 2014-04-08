@@ -18,22 +18,11 @@ class AuditinitsController < ApplicationController
 
 	def create
 		@auditinit = Auditinit.new(params[:auditinit])
-
-		respond_to do |format|
-			if @auditinit.save
-		
-		UserMailer.initiate_audit(@auditinit).deliver
-        format.html { redirect_to @auditinit, notice: 'auditinit was successfully created.' }
-        format.json { render json: @auditinit, status: :created, location: @auditinit }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @auditinit.errors, status: :unprocessable_entity }
-      end
+		if @auditinit.save
+			UserMailer.initiate_audit(@auditinit).deliver
+        	redirect_to root_path, notice: 'auditinit was successfully created.'
+        end
     end
-  end
-
-
-
 
 	def update
 		# @auditinit = current_user.auditinits.find(params[:id])
