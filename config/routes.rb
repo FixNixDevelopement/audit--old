@@ -1,5 +1,7 @@
 Audit::Application.routes.draw do
 
+  resources :mailusers
+
   devise_for :users
 
   resources :dashboards
