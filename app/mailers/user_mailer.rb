@@ -6,4 +6,11 @@ class UserMailer < ActionMailer::Base
     @url  = 'http://www.fixrnix.in'
     mail(to: @user.email, subject: 'Welcome to FixNix Audit Management')
   end
+
+	def initiate_audit(auditinit)
+    	@auditinit = auditinit
+    	
+    	mail(:to => @auditinit.auditor_email, :subject => "Notification: Mark your calendar, an audit is assigned")  
+  	end
+
 end

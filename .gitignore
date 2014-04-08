@@ -16,3 +16,4 @@
 
 #Ignore .idea files
 .idea
+config/database.yml
