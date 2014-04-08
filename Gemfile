@@ -29,6 +29,10 @@ gem 'railroady'
 
 gem 'bootstrap-sass' , '~> 2.3.2'
 
+gem 'devise'
+
+gem "rails-erd"
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -1,0 +1,42 @@
+<%= form_for(@auditinit) do |f| %>
+ 
+	<%= f.label "Audit Title" %>
+	<%= f.text_field :title %>
+
+	<%= f.label "Audit Purpose" %>
+	<%= f.text_field :purpose %>
+
+	<%= f.label "Audit Scope" %>
+	<%= f.text_field :scope %>
+
+	<%= f.label "Audit Summary" %>
+	<%= f.text_field :summary %>
+
+	<%= f.label "Type" %>
+	<%= f.text_field :a_type %>
+
+	<%= f.label "Department" %>
+	<%= f.text_field :location %> 
+
+	<%= f.label "Auditor Name" %>
+	<%= f.text_field :auditor_name %>
+
+	<%= f.label "Auditor Email" %>
+	<%= f.text_field :auditor_email %>
+
+	<%= f.label "Auditee Name" %>
+	<%= f.text_field :auditee_name %>
+
+	<%= f.label "Auditee Email" %>
+	<%= f.text_field :auditee_email %>
+
+	<%= f.label "Start Date" %>
+	<%= f.text_field :start_date %>
+
+	<%= f.label "End Date " %>
+	<%= f.text_field :end_date %>
+	<br/>
+
+	<%= f.submit %>
+
+<% end %>
