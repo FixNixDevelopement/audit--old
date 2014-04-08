@@ -16,7 +16,7 @@ class CreateAuditinits < ActiveRecord::Migration
       t.string :auditor_email
       t.string :auditee_name
       t.string :auditee_email
-
+      t.string :client_name
       t.timestamps
     end
   end

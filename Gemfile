@@ -29,6 +29,10 @@ gem 'railroady'
 
 gem 'bootstrap-sass' 
 
+gem 'fullcalendar-rails'
+
+gem "highcharts-rails", "~> 3.0.0"
+
 gem 'devise'
 
 gem "rails-erd"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140408070259) do
+ActiveRecord::Schema.define(:version => 20140407140114) do
 
   create_table "audit_cat_values", :id => false, :force => true do |t|
     t.integer  "auditinits_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20140408070259) do
     t.string   "auditor_email"
     t.string   "auditee_name"
     t.string   "auditee_email"
+    t.string   "client_name"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.integer  "user_id"
@@ -62,15 +63,6 @@ ActiveRecord::Schema.define(:version => 20140408070259) do
   end
 
   add_index "catvalues", ["categories_id"], :name => "index_catvalues_on_categories_id"
-
-  create_table "mailusers", :force => true do |t|
-    t.string   "username"
-    t.string   "email"
-    t.string   "password"
-    t.integer  "empid"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

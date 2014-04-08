@@ -13,4 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require fullcalendar
 //= require_tree .
+//= require highcharts
+//= require highcharts/adapters/mootools-adapter
+//= require highcharts/modules/data
+//= require highcharts/themes/dark-green

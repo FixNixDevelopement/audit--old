@@ -3,7 +3,7 @@ Audit::Application.routes.draw do
   resources :mailusers
 
   devise_for :users
-
+  resources :calendars
   resources :dashboards
   resources :auditinits
   # The priority is based upon order of creation:

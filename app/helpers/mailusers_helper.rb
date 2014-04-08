@@ -1,2 +1,0 @@
-module MailusersHelper
-end
