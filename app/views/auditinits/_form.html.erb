@@ -10,16 +10,7 @@
 
 <%= form_for(@auditinit) do |f| %>
   
-    <% if @auditinit.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@auditinit.errors.count, "error") %> prohibited this businessunit from being saved:</h2>
-          <ul>
-          <% @auditinit.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-          </ul>
-      </div>
-    <% end %>
+    
 
 
 
@@ -27,6 +18,21 @@
 	<div class="panel-heading">Create New Audit</div>
   	<div class="panel-body" style="height:900px">
    		<div class="col-xs-12 col-sm-6 col-md-8 col-lg-offset-1">
+
+      <!-- Error Message -->
+
+        <% if @auditinit.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@auditinit.errors.count, "error") %> prohibited this businessunit from being saved:</h2>
+            <ul>
+              <% @auditinit.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+
         <ul class="breadcrumb">
           <li class="active"><a href="#organization" data-toggle="tab">Audit</a></li>
           <li><a href="#client" data-toggle="tab">Plan</a></li>
@@ -86,7 +92,7 @@
     				   <br/><br/>
     				   <div class="input-sm">
         				   <div class="col-lg-10">
-    						<%= f.label "Department" %>
+    						<%= f.label "Location" %>
 							<%= f.text_field :location  ,:class =>  "form-control" %>  
    			    		    </div>
     					</div>
