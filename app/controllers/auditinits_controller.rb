@@ -1,11 +1,11 @@
 class AuditinitsController < ApplicationController
 
 	def index
-		@auditinit = current_user.auditinits.all
+		@auditinits = current_user.auditinits.all
 	end
 
 	def show
-		# @auditinit = current_user.auditinit.find(params[:id])
+		 @auditinit = current_user.auditinit.find(params[:id])
 	end
 
 	def new
@@ -17,7 +17,8 @@ class AuditinitsController < ApplicationController
 	end
 
 	def create
-		@auditinit = Auditinit.new(params[:auditinit])
+
+		@auditinit = current_user.auditinits.new(params[:auditinit])
 		if @auditinit.save
 			UserMailer.initiate_audit(@auditinit).deliver
         	redirect_to root_path, notice: 'auditinit was successfully created.'

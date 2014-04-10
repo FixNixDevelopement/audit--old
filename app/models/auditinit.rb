@@ -5,7 +5,17 @@ class Auditinit < ActiveRecord::Base
   has_many :audit_cat_values, :dependent => :destroy
   has_many :catvalues, :through => :audit_cat_values
   has_many :categories, :through => :audit_cat_values
-
-
   belongs_to :user
+
+  # Validation
+
+  validates :auditee_email, :auditee_name, :auditor_email , :auditor_name, :title , :presence => true
+  validates :start_date, :date => {:before_or_equal_to => :end_date, :message => 'must be before or same as end date'}
+
+  # Self Audit
+  validate :cannot_audit_self
+  def cannot_audit_self
+    self.errors[:base] << "You can not audit yourself." if self.auditee_email == self.auditor_email
+  end
+
 end

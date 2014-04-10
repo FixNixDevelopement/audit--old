@@ -1,2 +1,57 @@
-	<%= render :partial => 'layouts/menu' %>
-<%= link_to "New Audit" , new_auditinit_path %>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Audit</title>
+</head>
+<body>
+
+
+	<!-- Rendering menu  -->
+	<%= render :partial => "layouts/menu" %>
+
+	<div class="container" >	
+
+		<%= link_to 'New' , new_auditinit_path %>
+
+		<div class="panel panel-primary">
+
+			<div class="panel-heading">
+				Audit
+			</div>
+
+			<div class="panel-body">
+			<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+  </tr>
+
+<% @auditinits.each do |auditinit| %>
+  <tr>
+    <td><%= auditinit.title %></td>
+    <td><%= auditinit.a_type %></td>
+  </tr>
+<% end %>
+</table>
+
+
+				
+			</div>
+			
+		</div>
+		
+
+
+
+
+
+	</div>
+	
+
+
+</body>
+</html>
+
+
+
+

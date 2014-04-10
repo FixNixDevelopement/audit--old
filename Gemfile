@@ -20,21 +20,25 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# Gem for jQuery
 gem 'jquery-rails'
 
-# ER - Diagram 
-gem 'railroady'
-
 # Bootstrap 
-
 gem 'bootstrap-sass' 
 
+# Gem for Calendar
 gem 'fullcalendar-rails'
 
+# Gem for Dashboard
 gem "highcharts-rails", "~> 3.0.0"
 
+# Gem for Authentication
 gem 'devise'
 
+# gem for date validation
+gem 'date_validator'
+
+# Gem to generate ER-diagram for ruby on rails application
 gem "rails-erd"
 
 # To use ActiveModel has_secure_password
