@@ -40,6 +40,8 @@ gem 'devise'
 gem 'date_validator'
 gem 'jquery_datepicker'
 
+# Gem to generate ER-diagram for ruby on rails application
+# gem "rails-erd"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
