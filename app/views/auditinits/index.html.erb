@@ -9,49 +9,38 @@
 	<!-- Rendering menu  -->
 	<%= render :partial => "layouts/menu" %>
 
-	<div class="container" >	
+	
 
-		<%= link_to 'New' , new_auditinit_path %>
+	<div class="container" , style="height:900px" >	
 
+		<div class="btn btn-default btn-sm pull-right">
+			<span class="glyphicon glyphicon-plus"></span>
+			<%= link_to 'New' , new_auditinit_path %>
+		</div>
+
+		<br /> 
+		<br />
+
+		<% @auditinits.each do |auditinit| %>
 		<div class="panel panel-primary">
 
 			<div class="panel-heading">
-				Audit
+				<%= auditinit.title %>
 			</div>
 
 			<div class="panel-body">
-			<table>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-  </tr>
-
-<% @auditinits.each do |auditinit| %>
-  <tr>
-    <td><%= auditinit.title %></td>
-    <td><%= auditinit.a_type %></td>
-  </tr>
-<% end %>
-</table>
-
-
-				
-			</div>
-			
+				Type : <%= auditinit.a_type %>
+				<br />
+				Start Date : <%= auditinit.start_date %>
+				<br />
+				End Date : <%= auditinit.end_date %>
+			</div>	
 		</div>
-		
-
-
-
-
-
+		<% end %>
 	</div>
-	
-
 
 </body>
 </html>
-
 
 
 

@@ -22,6 +22,8 @@ class AuditinitsController < ApplicationController
 		if @auditinit.save
 			UserMailer.initiate_audit(@auditinit).deliver
         	redirect_to root_path, notice: 'auditinit was successfully created.'
+        else
+        	render action: "new"
         end
     end
 
