@@ -18,4 +18,4 @@
 //= require highcharts
 //= require highcharts/adapters/mootools-adapter
 //= require highcharts/modules/data
-//= require highcharts/themes/dark-green
+//= require highcharts/themes/grid
