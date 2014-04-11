@@ -5,7 +5,7 @@ class AuditinitsController < ApplicationController
 	end
 
 	def show
-		 @auditinit = current_user.auditinit.find(params[:id])
+		 @auditinit = current_user.auditinits.find(params[:id])
 	end
 
 	def new
@@ -19,14 +19,28 @@ class AuditinitsController < ApplicationController
 	def create
 
 		@auditinit = current_user.auditinits.new(params[:auditinit])
+		
 		if @auditinit.save
 			UserMailer.initiate_audit(@auditinit).deliver
         	redirect_to root_path, notice: 'auditinit was successfully created.'
+        else
+        	render action: "new"
         end
     end
 
 	def update
-		# @auditinit = current_user.auditinits.find(params[:id])
-		# if @auditinits.update_attributes()
+		@auditinit = current_user.auditinits.find(params[:id])
+
+		if @auditinit.update_attributes(params[:auditinit])
+			redirect_to auditinits_path, notice: 'Audit was successfully updated'
+		else
+			render action: "edit"		
+		end
+	end
+
+	def destroy
+		@auditinit = current_user.auditinits.find(params[:id])
+		@auditinit.destroy
+		redirect_to auditinits_url
 	end
 end

@@ -22,6 +22,7 @@ end
 
 # Gem for jQuery
 gem 'jquery-rails'
+gem "jquery-ui-rails"
 
 # Bootstrap 
 gem 'bootstrap-sass' 
@@ -35,11 +36,12 @@ gem "highcharts-rails", "~> 3.0.0"
 # Gem for Authentication
 gem 'devise'
 
-# gem for date validation
+# gem for date 
 gem 'date_validator'
+gem 'jquery_datepicker'
 
 # Gem to generate ER-diagram for ruby on rails application
-gem "rails-erd"
+# gem "rails-erd"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

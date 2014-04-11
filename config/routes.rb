@@ -6,6 +6,9 @@ Audit::Application.routes.draw do
   resources :calendars
   resources :dashboards
   resources :auditinits
+  resources :catvalues
+  resources :categories
+  resources :configures
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
