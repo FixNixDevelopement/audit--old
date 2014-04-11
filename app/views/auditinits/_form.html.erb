@@ -1,18 +1,20 @@
-<script>
-  $(function() {
-     $( "#datepicker" ).datepicker({
-      dateFormat: "yy-mm-dd"    });
-     $( "#datepicker1" ).datepicker({
-      dateFormat: "yy-mm-dd"    });     
-  });
-  </script>
 
+<script type="text/javascript">
+
+
+var $tabs = $('.tabbable li');
+
+$('#prevtab').on('click', function() {
+    $tabs.filter('.active').prev('li').find('a[data-toggle="tab"]').tab('show');
+});
+
+$('#nexttab').on('click', function() {
+    $tabs.filter('.active').next('li').find('a[data-toggle="tab"]').tab('show');
+});
+  
+</script>
 
 <%= form_for(@auditinit) do |f| %>
-  
-    
-
-
 
 <div class="panel panel-primary">
 	<div class="panel-heading">Create New Audit</div>
@@ -33,7 +35,7 @@
         <% end %>
 
 
-        <ul class="breadcrumb">
+        <ul class="nav nav-tabs">
           <li class="active"><a href="#organization" data-toggle="tab">Audit</a></li>
           <li><a href="#client" data-toggle="tab">Plan</a></li>
           <li><a href="#team" data-toggle="tab">Team </a></li>
@@ -72,6 +74,8 @@
       					</div>
        					<br/><br/>                   
     				</div>
+
+  
 				</div>
 
 				<div class="tab-pane" id="client">
@@ -110,7 +114,11 @@
 								<%= f.datepicker :end_date ,:class =>  "form-control input-sm" %>	
 						    </div>
       					</div>
-       					<br/><br/>                   
+       					<br/><br/>  
+
+                <div class="btn btn-primary">
+                <a href="#team" data-toggle="tab">Team </a>
+                </div>                 
     				</div>
 				</div>
 

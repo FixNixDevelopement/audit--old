@@ -10,7 +10,6 @@ class Auditinit < ActiveRecord::Base
   # Validation
 
   validates :auditee_email, :auditee_name, :auditor_email , :auditor_name, :title , :presence => true
-  validates :start_date, :date => {:before_or_equal_to => :end_date, :message => 'must be before or same as end date'}
 
   # Self Audit
   validate :cannot_audit_self
