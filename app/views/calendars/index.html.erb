@@ -1,49 +1,84 @@
 <html>
 <head>
-	<title>Calendar</title>
-	<script type="text/javascript">
-	$(document).ready(function(){
-		$('#calendar').fullCalendar({
-			height: 650,
-			header: {
-				left: 'prev,next today',
-				center: 'title',
-				right: 'month,agendaWeek,agendaDay'
-			},
-			buttonIcon: {
-				prev: 'circle-triangle-w',
-    			next: 'circle-triangle-e'
-			},
-			buttonText: {
-				month: 'Month',
-				agendaWeek: 'Week',
-				agendaDay: 'Day',
-				today: 'Today'
-			},
-			firstDay: 1, 
-			isRTL :false,
-			// hiddenDays : [0,6],
-			weekMode : 'variable',
-			weekNumbers : false,
-			handleWindowResize :true,
-			allDaySlot: true,
-			allDayText: 'Today',
-			year: 2014,
-			month: 3
+  <title>Calendar</title>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('#calendar').fullCalendar({
 
-		});
-	});
-	</script>
+
+// eventClick: [function(calEvent,jsEvent,view){}],
+  events: 
+  [
+    <% @auditinits.each do |audit| %>
+    {
+      title  : "<%= audit.title + "::Started" %>",
+      start  : "<%= audit.start_date %>",
+      end    : "<%= audit.start_date %>",
+      color :"green",
+      url : "/auditinits/",
+    },
+    {
+      title  : "<%= audit.title + "::Ended" %>",
+      start  : "<%= audit.end_date %>",
+      end    : "<%= audit.end_date %>",
+      color: "brown",
+      url : "/auditinits/",
+    },
+   <% end %>
+  ],
+  eventClick: function(event) {
+        if (event.url) {
+          alert('hiiiiiiiiiiiiiiii');
+            window.open(event.url);
+            return false;
+        }
+    },
+
+
+
+      height: 650,
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      },
+      buttonIcon: {
+        prev: 'circle-triangle-w',
+          next: 'circle-triangle-e'
+      },
+      buttonText: {
+        month: 'Month',
+        agendaWeek: 'Week',
+        agendaDay: 'Day',
+        today: 'Today'
+      },
+      firstDay: 1, 
+      isRTL :false,
+      // hiddenDays : [0,6],
+      weekMode : 'variable',
+      weekNumbers : false,
+      handleWindowResize :true,
+      allDaySlot: true,
+      allDayText: 'Today',
+      year: 2014,
+      month: 3
+
+    });
+  });
+  </script>
 </head>
 <body>
 
-	<!-- Rendering menu  -->
-	<%= render :partial => "layouts/menu" %>
+  <!-- Rendering menu  -->
+  <%= render :partial => "layouts/menu" %>
 
-	<!-- Calendar Section -->
-	<div id='calendar'>
-	</div>
-	<!-- End of Calendar -->
+  <!-- Calendar Section -->
+  <div id='calendar'>
+          <button onclick="getView()">getView</button>
+      <button onclick="$('#calendar').fullCalendar('changeView', 'basicDay')">change to basicDay</button>
+
+  </div>
+  <!-- End of Calendar -->
 
 </body>
 </html>

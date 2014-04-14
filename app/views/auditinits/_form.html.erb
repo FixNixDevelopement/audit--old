@@ -1,7 +1,16 @@
 
 <script type="text/javascript">
 
+// date picker
+  $(function() {
+     $( "#datepicker" ).datepicker({
+      dateFormat: "yy-mm-dd"    });
+     $( "#datepicker1" ).datepicker({
+      dateFormat: "yy-mm-dd"    });     
+  });
 
+
+// script for tabeed panes
 var $tabs = $('.tabbable li');
 
 $('#prevtab').on('click', function() {
@@ -104,14 +113,14 @@ $('#nexttab').on('click', function() {
     					<div class="input-sm">
          					<div class="col-lg-4">
 							   <%= f.label "Start Date" %>
-							   <%= f.datepicker :start_date ,:class =>  "form-control input-sm" %>
+							   <%= f.datepicker :start_date, :id => :datepicker ,:class =>  "form-control input-sm" %>
       						</div>
       					</div>
       					<br/><br/>
       					<div class="input-sm">
           					<div class="col-lg-4">						
 								<%= f.label "End Date " %>
-								<%= f.datepicker :end_date ,:class =>  "form-control input-sm" %>	
+								<%= f.datepicker :end_date, :id => :datepicker1, :class =>  "form-control input-sm" %>	
 						    </div>
       					</div>
        					<br/><br/>  
