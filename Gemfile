@@ -6,6 +6,8 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
+gem 'rspec'
+gem  'rspec-rails'
 
 
 # Gems used only for assets and not required
@@ -22,7 +24,6 @@ end
 
 # Gem for jQuery
 gem 'jquery-rails'
-gem "jquery-ui-rails"
 
 # Bootstrap 
 gem 'bootstrap-sass' 
@@ -35,13 +36,13 @@ gem "highcharts-rails", "~> 3.0.0"
 
 # Gem for Authentication
 gem 'devise'
-
-# gem for date 
+gem 'cancan'
+gem 'rolify', :git => 'git://github.com/EppO/rolify.git'
+# gem for date validation
 gem 'date_validator'
-gem 'jquery_datepicker'
 
 # Gem to generate ER-diagram for ruby on rails application
-# gem "rails-erd"
+gem "rails-erd"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

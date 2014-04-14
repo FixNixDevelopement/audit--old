@@ -1,5 +1,5 @@
-<div class="navbar navbar-default navbar-static-top" role="navigation">
-<div class="container-">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
 <!-- Logo/Company Name -->
 	<div class="navbar-header">
 		<a href="#" class="navbar-brand">FixNix Audit Management</a>
@@ -11,10 +11,15 @@
 	<div>
 		<ul class="nav navbar-nav">
 
-			<li class="active"><a href="/">Dashboard</a></li>
+			
+			<li><a href="/">Dashboard</a></li>
+			<%if can? :manage, Calendar %>
 			<li><a href="/calendars">Calendar</a></li>
+			<%end%>
 			<li><a href="/">MyTask</a></li>
+			<%if can? :manage, Auditinit%>
 			<li><a href="/auditinits">Audit Initiation</a></li>
+			<%end%>
 			<li><a href="/">Pre Audit</a></li>
 			<li><a href="/">Audit Investigation</a></li>
 			<li><a href="/">Post Audit </a></li>
@@ -25,10 +30,12 @@
         	<li class="dropdown">
           		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
           		<ul class="dropdown-menu">
-            		<li><a href="/configures">Configure</a></li>
+            		<li><a href="/">Configure</a></li>
 						<li><a href="/">Coso Scale</a>
 						<li><a href="/">Score Card</a>
-						<li><a href="/">User Management</a></li>
+							<%if can? :manage, Account %>
+						<li><a href="/accounts">User Management</a></li>
+						<%end%>
 						<li><a href="/">Audit Trail</a></li>
 						<li><a href="/">Escalation Matrix</a></li>
           		</ul>
@@ -47,4 +54,4 @@
 <!-- End of Menu Division  -->
 
 </div>
-</div>
+</nav>
