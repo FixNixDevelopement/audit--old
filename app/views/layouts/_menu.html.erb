@@ -13,9 +13,8 @@
 
 			
 			<li><a href="/">Dashboard</a></li>
-			<%if can? :manage, Calendar %>
+
 			<li><a href="/calendars">Calendar</a></li>
-			<%end%>
 			<li><a href="/">MyTask</a></li>
 			<%if can? :manage, Auditinit%>
 			<li><a href="/auditinits">Audit Initiation</a></li>

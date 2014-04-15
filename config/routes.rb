@@ -1,18 +1,6 @@
 Audit::Application.routes.draw do
 
-  resources :mailusers
-
-resources :samples, :only => [:index, :new, :create, :destroy]
-
-
-  resources :accounts, :only => [:index, :new, :create, :destroy]
-
-get "accounts/new"
-
-match '/accounts' => 'accounts#new', :as => 'accounts'
- 
-
-
+  
   devise_for :users
   resources :calendars
   resources :dashboards
@@ -20,6 +8,7 @@ match '/accounts' => 'accounts#new', :as => 'accounts'
   resources :catvalues
   resources :categories
   resources :configures
+  resources :accounts, :only => [:index, :new, :create, :destroy]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

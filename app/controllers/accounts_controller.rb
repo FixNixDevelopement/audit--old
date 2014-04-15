@@ -5,8 +5,6 @@ class AccountsController < ApplicationController
     # @accounts = Account.all
     @account = Account.new
     @account.users.build
-    
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @accounts }
