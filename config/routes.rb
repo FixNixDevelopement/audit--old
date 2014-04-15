@@ -2,6 +2,17 @@ Audit::Application.routes.draw do
 
   resources :mailusers
 
+resources :samples, :only => [:index, :new, :create, :destroy]
+
+
+  resources :accounts, :only => [:index, :new, :create, :destroy]
+
+get "accounts/new"
+
+match '/accounts' => 'accounts#new', :as => 'accounts'
+ 
+
+
   devise_for :users
   resources :calendars
   resources :dashboards
