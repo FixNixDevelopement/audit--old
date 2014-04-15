@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   belongs_to :account, :inverse_of => :users
-  validates :account, :presence => true
+  #validates :account, :presence => true
   rolify
    attr_accessible :role_ids
    
