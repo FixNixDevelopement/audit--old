@@ -22,3 +22,4 @@
 every 2.minutes do
 	runner "User.min_send_mail" , :environment => 'development' , :output => 'log/cron.log'
 end
+
