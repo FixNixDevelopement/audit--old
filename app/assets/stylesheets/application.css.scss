@@ -14,5 +14,18 @@
  *= require jquery.ui.all
  */
 @import "bootstrap";
+body {
+	padding-top: 60px;
+}
 
+ .myfont {
+    font-family: arial, sans-serif;
+color: #09C4E6;
+font-size: 35px;
+}
 
+ .mypara {
+    font-family: arial, sans-serif;
+color: #088A68;
+font-size: 20px;
+}

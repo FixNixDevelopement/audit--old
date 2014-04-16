@@ -1,0 +1,54 @@
+<br /><br /><br />
+<div>
+	<table class="table table-striped">
+		<tr>
+			<th>Department</th>
+			<th>Action</th>
+		</tr>
+		<% @departments.each do |d| %>
+		<tr>
+			<td>
+				<%= d.v_name %>
+			</td>
+			<td>
+				<%= link_to 'Destory' , d , method: :delete, data: {confirm: 'Are you sure?'} %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+
+	<table class="table table-striped">
+		<tr>
+			<th>Location</th>
+			<th>Action</th>
+		</tr>
+
+		<% @locations.each do |l| %>
+		<tr>
+			<td>
+				<%= l.v_name %>
+			</td>
+			<td>
+				<%= link_to 'Destory' , l , method: :delete, data: {confirm: 'Are you sure?'} %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+
+	<table class="table table-striped">
+		<tr>
+			<th>Team</th>
+			<th>Action</th>
+		</tr>
+		<% @teams.each do |t| %>
+		<tr>
+			<td>
+				<%= t.v_name %>
+			</td>
+			<td>
+				<%= link_to 'Destory' , t , method: :delete, data: {confirm: 'Are you sure?'} %>
+			</td>			
+		</tr>
+		<% end %>
+	</table>
+</div>

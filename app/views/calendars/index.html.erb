@@ -73,11 +73,16 @@
   <%= render :partial => "layouts/menu" %>
 
   <!-- Calendar Section -->
-  <div id='calendar'>
-          <button onclick="getView()">getView</button>
-      <button onclick="$('#calendar').fullCalendar('changeView', 'basicDay')">change to basicDay</button>
+  <div class="panel panel-primary">
 
+    <div class="panel-heading">Calendar</div>
+    <div class="panel-body">
+      <div id='calendar'>
+      </div>
+    </div>
+    
   </div>
+ 
   <!-- End of Calendar -->
 
 </body>

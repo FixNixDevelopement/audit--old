@@ -38,8 +38,10 @@ gem "highcharts-rails", "~> 3.0.0"
 gem 'devise'
 gem 'cancan'
 gem 'rolify'
+
 # gem for date validation
 gem 'date_validator'
+gem 'jquery_datepicker'
 
 # Gem to generate ER-diagram for ruby on rails application
  gem "rails-erd"
@@ -47,6 +49,10 @@ gem 'date_validator'
 # Testing tool
 gem 'rspec'
 gem 'rspec-rails'
+
+
+# Gem for Cronjob
+gem 'whenever', :require => false
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

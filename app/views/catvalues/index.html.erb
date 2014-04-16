@@ -1,49 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>FixNix Audit Management -- Configure Settings</title>
+  <title>Configure</title>
 </head>
 <body>
 
-<!-- Rendering Menu -->
-<%= render :partial => 'layouts/menu' %>
+  <!-- Rendering menu  -->
+    <%= render :partial => "layouts/menu" %>
 
-<div class="container offset well">
-<div class="panel panel-primary" >
-	<div class="panel-heading">
-		<h3 class="panel-title">Add Values</h3>
-	</div>
-	<div class="panel-body">
-	<div class="form-group">
-	<%= form_for(@catvalue) do |f| %>
-		<%=f.collection_select :categories_id, @categories, :id,:c_name, {}, class: 'drop-down'%>
-		<%= f.label "Category"  %>
-		<br/>
-		<%= f.text_field :v_name , :class =>  "form-control" %>
-		<br/>
-		<%= f.submit  'Add' , :class => "btn btn-primary btn-sm"%>
-	<% end %>
-	</div>	
-	</div>
 
-	<div class="panel-heading">
-		<h3 class="panel-title">Remove Values</h3>
-	</div>
+    <!-- Main -->
 
-	<%=collection_select(:category, :id, @categories, :id,:c_name, {}, class: 'drop-down')%>
-	<%=collection_select(:catvalue, :id, @catvalues, :id, :v_name, {}, class: 'drop-down')%>
-	<%= link_to 'Destroy', {:catvalue => :id},method: :delete, data: { confirm: 'Are you sure?' } %>
+   
 
-	<br/>
+    <div class="panel panel-primary">
+    <div class="panel-heading">Settings</div>
+    <div class="container offset well">
+      <div class="panel-body" style="height:900px">
+        <div class="col-xs-12 col-sm-6 col-md-8 col-lg-offset-1">
+          <h1> Configure</h1>
+          <div>
+            <ul class="nav nav-tabs">
+            <li class="active"><a href="#all" data-toggle="tab">Configure</a></li>
+                  <li><a href="#dep" data-toggle="tab">Department</a></li>
+                  <li><a href="#location" data-toggle="tab">Location</a></li>
+                  <li><a href="#team" data-toggle="tab">Team</a></li>
+              </ul>
+            <div class="tab-content">
 
-	<%= @catvalues.each do |c| %>
-	<%= c.v_name %>
-	<%= link_to 'Destroy', c,method: :delete, data: { confirm: 'Are you sure?' } %>
-	<br/>
-	<% end %>
-	</div>
+
+            <div class="tab-pane active" id="all">  
+              <%= render 'view' %>
+            </div>
+
+            <!-- End of table -->
+
+            <!-- Department code Starts here -->
+
+              <div class="tab-pane" id="dep">
+                <div class="input-sm">
+                  <p class="mypara">Add Department</p>
+                  <div class="col-lg-6">
+                      <%= form_for(@catvalue) do |f| %>
+                    <%= f.hidden_field :categories_id , :value => '1' %>
+                    <%= f.text_field :v_name ,:class =>  "form-control" %>
+                  </div>
+                  <br /><br /><br />
+                  <%= f.submit 'Add',  :class => "btn btn-success btn-sm" %>
+                  <% end  %>
+                </div>    
+              </div>
+
+            <!-- Department code ends here -->
+
+            <!-- Location code start here -->
+              <div class="tab-pane" id="location">
+                <div class="input-sm">
+                  <p class="mypara">Add Location</p>
+                  <div class="col-lg-6">
+                   <%= form_for(@catvalue) do |f| %>
+                    <%= f.hidden_field :categories_id , :value => '2' %>
+                    <%= f.text_field :v_name, :class => "form-control" %>
+                  </div>
+                  <br /><br /><br />
+                  <%= f.submit 'Add' , :class => "btn btn-success btn-sm" %>
+                  <% end %>
+                </div>
+              </div>
+            <!-- Location code ends here -->
+
+            <!-- Team code starts here -->
+              <div class="tab-pane" id="team">
+                <div class="input-sm">
+                <p class="mypara">Add Team</p>
+                  <div class="col-lg-6">
+                   <%= form_for(@catvalue) do |f| %>
+                   <%= f.hidden_field :categories_id , :value => '3' %>
+                    <%= f.text_field :v_name, :class => "form-control"  %>
+                  </div>
+                  <br /><br /><br />
+                  <%= f.submit 'Add' , :class => "btn btn-success btn-sm" %>
+                  <% end %>
+                </div>
+              </div>
+
+            <!-- Team code ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 </div>
-</div>
+
 </body>
 </html>
