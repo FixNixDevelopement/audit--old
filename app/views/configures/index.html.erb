@@ -1,50 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>FixNix Audit Management -- Configure Settings</title>
+	<title>Configure</title>
 </head>
 <body>
 
-<!-- Rendering Menu -->
-<%= render :partial => 'layouts/menu' %>
+	<!-- Rendering menu  -->
+  	<%= render :partial => "layouts/menu" %>
 
-<div class="container offset well">
-<div class="panel panel-primary" >
-	<div class="panel-heading">
-		<h3 class="panel-title">Add Values</h3>
-	</div>
-	<div class="panel-body">
-	<div class="form-group">
-	<%= form_for(@catvalue) do |f| %>
-		<%= f.label "Select Category"  %>
-		<%=f.collection_select :categories_id, @categories, :id,:c_name, {}, class: 'drop-down'%>
-		<%= f.label "Add Value"  %>
-		<%= f.text_field :v_name , :class =>  "form-control" %>
-		<br/>
-		<%= f.submit  'Add' , :class => "btn btn-primary btn-sm"%>
-	<% end %>
-	</div>	
-	</div>
+  	<!-- Main -->
+  	<div class="panel panel-primary">
+	 	  <div class="panel-heading">Settings</div>
+  	  <div class="panel-body" style="height:900px">
+        <div class="container offset well">
+          <ul class="nav nav-pills nav-stacked">
+            <div class="col-md-4">
+              <li class="<%= 'active' if params[:controller] == 'catvalues' %>"><a href="#">Categories and values</a></li>
+              <li><a href="#">User Management</a></li>
+            </div>
+          </ul>
+        </div>	
+   		</div>
+   	</div>
 
-	<div class="panel-heading">
-		<h3 class="panel-title">Remove Values</h3>
-	</div>
-	<br/>
-
-	<%=collection_select(:category, :id, @categories, :id,:c_name, {}, class: 'drop-down')%>
-	<%=collection_select(:catvalue, :id, @catvalues, :id, :v_name, {}, class: 'drop-down')%>
-	<%= link_to 'Destroy', {:catvalue => :id},method: :delete, data: { confirm: 'Are you sure?' } %>
-
-	<br/>
-
-	<%= @catvalues.each do |c| %>
-	<%= c.v_name %>
-	<%= link_to 'Destroy', c,method: :delete, data: { confirm: 'Are you sure?' } %>
-	<br/>
-	<% end %>
-	</div>
-
-</div>
-</div>
 </body>
 </html>

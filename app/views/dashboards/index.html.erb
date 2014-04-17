@@ -7,161 +7,32 @@
 
 <!-- Rendering Menu -->
 	<%= render :partial => 'layouts/menu' %>
+
+
+<!-- Code for Counts -->
 <div class="container">
 
   <div class="row-fluid">
 
-<div class="col-lg-2" style="margin-left:1px">
-  <small>
-<div class="panel panel-primary">
-
-  <div class="panel-heading">
-          Audit Count
-  </div>
-
-  <div class="panel-body">
-    <table>
-      <tr>
-           <th>Count</th>
-      </tr>
-
-      <% @count_audit.each do |audit| %>
-          <tr>
-               <td><%= audit.totl %></td>
-                      </tr>
-      <% end %>
-    </table>
-
-  </div>
-</div>
-  </small>
-</div>
+    <div class="col-lg-2" style="margin-left:1px">
+      <small>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <center>Initiated Audit</center> 
+          </div>
+          <div class="panel-body">
+            <center>
+              <% @count_audit.each do |audit| %>
+                <%= audit.totl %>
+              <% end %>
+            </center>
+         </div>
+        </div>
+      </small>
+    </div>
   </div>
 </div>
 
-
-<div id="container" style="min-width: 600px; height: 400px;  float:left;">
-  <script type="text/javascript">
-      $(function () {
-          $('#container').highcharts({
-              chart: {
-                  plotBackgroundColor: null,
-                  plotBorderWidth: null,
-                  plotShadow: false
-              },
-              title: {
-                  text: ' Audit shares for specific type '
-              },
-              tooltip: {
-                  pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-              },
-              plotOptions: {
-                  pie: {
-                      allowPointSelect: true,
-                      cursor: 'pointer',
-                      dataLabels: {
-                          enabled: true,
-                          color: '#000000',
-                          connectorColor: '#000000',
-                          format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-                      }
-                  }
-              },
-              series: [{
-                  type: 'pie',
-                  name: 'Audit Counts',
-                  data: [
-                      ['Internal',  <% @intern.each do |inn| %>
-                                    <%= inn.count %>
-                   <% end %> ],
-                      ['External',       <% @extern.each do |enn| %>
-                                          <%= enn.count %>
-                                             <% end %>]
-
-                  ]
-              }]
-          });
-      });
-
-
-  </script>
-</div>
-<div id="container1" style="min-width: 600px; height: 400px;float:left; ">
-<script type="text/javascript">
-    $(function () {
-
-        // Create the chart
-        $('#container1').highcharts({
-            chart: {
-                type: 'pie'
-            },
-            title: {
-                text: 'document.write(drilldownSeries.toString())'
-            },
-            subtitle: {
-                text: 'Click the slices to view versions. Source: netmarketshare.com.'
-            },
-            plotOptions: {
-                series: {
-                    dataLabels: {
-                        enabled: true,
-                        format: '{point.name}: {point.y:.1f}%'
-                    }
-                }
-            },
-
-            tooltip: {
-                headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-                pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
-            },
-
-            series: [{
-                name: 'Things',
-                colorByPoint: true,
-                data: [
-                    <%@intern.each do |inn|%>
-                    {
-                        name: '<%=inn.a_type%>',
-                        y: <%=inn.count%>,
-                        drilldown: '<%=inn.a_type%>'
-                    },
-                    <%end%>
-                    <%@extern.each do |enn|%>
-                    {
-                        name: '<%=enn.a_type%>',
-                        y: <%=enn.count%>,
-                        drilldown: '<%=enn.a_type%>'
-                    },
-                    <%end%>
-                ]
-            }],
-            drilldown: {
-                series: [{
-                    id: 'internal',
-                    data: [
-                        <%@intern1.each do |f|%>
-                        ['<%=f.title%>',<%=f.share%>],
-                        <%end%>
-
-                    ]
-                }, {
-                    id: 'external',
-                    data: [
-                        <%@extern1.each do |m|%>
-                        ['<%=m.title%>',<%=m.share%>],
-                        <%end%>
-                    ]
-                }]
-            }
-        })
-
-    });
-
-</script>
-</div>
-
-
-	
-
+<!-- End of count -->
 </body>
 </html>

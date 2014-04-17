@@ -1,23 +1,28 @@
-<nav class="navbar navbar-default" role="navigation">
-<div class="container-fluid">
+<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
 <!-- Logo/Company Name -->
 	<div class="navbar-header">
+		<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+			<span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+		</button>
 		<a href="#" class="navbar-brand">FixNix Audit Management</a>
 	</div>
 <!-- End of Logo/Company Name -->
 
 
 <!-- Menu Division  -->
-	<div>
+	<div id="navbarCollapse" class="collapse navbar-collapse">
 		<ul class="nav navbar-nav">
 
 			
-			<li><a href="/">Dashboard</a></li>
+			<li class="<%= 'active' if params[:controller] == 'dashboards' %>"><a href="/">Dashboard</a></li>
 
-			<li><a href="/calendars">Calendar</a></li>
-			<li><a href="/">MyTask</a></li>
+			<li class="<%= 'active' if params[:controller] == 'calendars' %>"><a href="/calendars">Calendar</a></li>
+			<li><a href="/mytaks">MyTask</a></li>
 			<%if can? :manage, Auditinit%>
-			<li><a href="/auditinits">Audit Initiation</a></li>
+			<li class="<%= 'active' if params[:controller] == 'auditinits' %>"><a href="/auditinits">Audit Initiation</a></li>
 			<%end%>
 			<li><a href="/">Pre Audit</a></li>
 			<li><a href="/">Audit Investigation</a></li>
@@ -29,7 +34,7 @@
         	<li class="dropdown">
           		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
           		<ul class="dropdown-menu">
-            		<li><a href="/">Configure</a></li>
+            		<li><a href="/catvalues">Configure</a></li>
 						<li><a href="/">Coso Scale</a>
 						<li><a href="/">Score Card</a>
 							<%if can? :manage, Account %>
@@ -51,6 +56,4 @@
       	</ul> 
 	</div>
 <!-- End of Menu Division  -->
-
-</div>
 </nav>

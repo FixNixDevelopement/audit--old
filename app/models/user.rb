@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  # after_create :assign_default_user_role
+
   belongs_to :account, :inverse_of => :users
   #validates :account, :presence => true
   rolify
@@ -15,5 +17,25 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :auditinits
+
+  # def assign_default_user_role
+  #   add_role(:admin)
+  # end
+
+  def self.min_send_mail
+    @user =User.all
+    @user.each do |u|
+      UserMailer.welcome_email(u).deliver
+    end
+  end
   
+  def self.reminder
+    @auditinit = Auditinit.all
+    @auditinit.each do |audit|
+      if(audit.end_date - Date.today <=3)
+        UserMailer.reminder_email(audit).deliver
+      end
+    end
+  end
+
 end

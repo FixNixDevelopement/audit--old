@@ -4,23 +4,11 @@
 // date picker
   $(function() {
      $( "#datepicker" ).datepicker({
-      dateFormat: "yy-mm-dd"    });
+      dateFormat: "dd-mm-yy"    });
      $( "#datepicker1" ).datepicker({
-      dateFormat: "yy-mm-dd"    });     
+      dateFormat: "dd-mm-yy"    });     
   });
 
-
-// script for tabeed panes
-var $tabs = $('.tabbable li');
-
-$('#prevtab').on('click', function() {
-    $tabs.filter('.active').prev('li').find('a[data-toggle="tab"]').tab('show');
-});
-
-$('#nexttab').on('click', function() {
-    $tabs.filter('.active').next('li').find('a[data-toggle="tab"]').tab('show');
-});
-  
 </script>
 
 <%= form_for(@auditinit) do |f| %>
@@ -43,7 +31,7 @@ $('#nexttab').on('click', function() {
           </div>
         <% end %>
 
-
+      <div class="container offset well">
         <ul class="nav nav-tabs">
           <li class="active"><a href="#organization" data-toggle="tab">Audit</a></li>
           <li><a href="#client" data-toggle="tab">Plan</a></li>
@@ -53,6 +41,8 @@ $('#nexttab').on('click', function() {
         		
 			<div class="tab-content">
 				<div class="tab-pane active" id="organization">
+        <br />
+          <p class="mypara">Step 1 0f 4</p>
     				<div class="form-inputs">
     				  <div class="input-sm">
         				  <div class="col-lg-10">
@@ -88,6 +78,8 @@ $('#nexttab').on('click', function() {
 				</div>
 
 				<div class="tab-pane" id="client">
+        <br />
+        <p class="mypara">Step 2 0f 4</p>
     				<div class="form-inputs">
             <div class="input-sm">
                   <div class="col-lg-10">
@@ -123,15 +115,13 @@ $('#nexttab').on('click', function() {
 								<%= f.datepicker :end_date, :id => :datepicker1, :class =>  "form-control input-sm" %>	
 						    </div>
       					</div>
-       					<br/><br/>  
-
-                <div class="btn btn-primary">
-                <a href="#team" data-toggle="tab">Team </a>
-                </div>                 
+       					<br/><br/>                   
     				</div>
 				</div>
 
 				<div class="tab-pane" id="team">
+        <br />
+        <p class="mypara">Step 3 0f 4</p>
     				<div class="form-inputs">
     				  <div class="input-sm">
         				  <div class="col-lg-10">
@@ -165,6 +155,8 @@ $('#nexttab').on('click', function() {
 				</div>
 
         <div class="tab-pane" id="confirmation">
+        <br />
+        <p class="mypara">Step 4 0f 4</p>
             <div class="form-inputs">
               <div class="input-sm">
                 <div class="col-lg-10">
@@ -174,8 +166,8 @@ $('#nexttab').on('click', function() {
                <br/><br/>      
             </div>
         </div>
-
-    		</div>
+      </div>
+    	</div>
 		</div>
 	</div>
 </div>

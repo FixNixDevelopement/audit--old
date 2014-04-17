@@ -3,12 +3,14 @@ class Auditinit < ActiveRecord::Base
 
   # Many to many with categories and Values 
   # has_many :audit_cat_values
-  # has_many :catvalues, :through => :audit_cat_values
-  # has_many :categories, :through => :audit_cat_values
-  belongs_to :user
+   has_many :catvalues, :through => :audit_cat_values
+   has_many :categories, :through => :audit_cat_values
+
+
+  # Relation ship with User 
+   belongs_to :user
 
   # Validation
-
   validates :auditee_email, :auditee_name, :auditor_email , :auditor_name, :title , :presence => true
 
   # Self Audit
