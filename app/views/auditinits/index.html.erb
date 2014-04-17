@@ -37,9 +37,9 @@
 				End Date : <%= auditinit.end_date %>
 				<br />
 				<br />
-				<%= link_to 'Manage Audit', edit_auditinit_path(auditinit), :class =>"btn btn-default btn-sm"  %>
-				<%= link_to 'Review', auditinit  ,:class =>  "btn btn-default btn-sm"%>
-				<%= link_to 'Delete', auditinit, method: :delete, data: { confirm: 'Are you sure?' }, :class =>  "btn btn-default btn-sm" %>
+				<%= link_to 'Manage Audit', edit_auditinit_path(auditinit), :class =>"btn btn-default btn-sm pull-right"  %>
+				<%= link_to 'Review', auditinit  ,:class =>  "btn btn-default btn-sm pull-right"%>
+				<%= link_to 'Delete', auditinit, method: :delete, data: { confirm: 'Are you sure?' }, :class =>  "btn btn-default btn-sm pull-right" %>
 			</div>
 		</div>
 		<% end %>

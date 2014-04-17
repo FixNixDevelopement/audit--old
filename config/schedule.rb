@@ -19,6 +19,7 @@
 
 # Learn more: http://github.com/javan/whenever
 
+<<<<<<< HEAD
 # every 2.minutes do
 # 	runner "User.min_send_mail" , :environment => 'development' , :output => 'log/cron.log'
 # end
@@ -30,3 +31,9 @@
 every :day, :at => '11:15am'  do
 	runner "User.reminder", :environment => 'development', :output => 'log/cron.log'
 end
+=======
+every 2.minutes do
+	runner "User.min_send_mail" , :environment => 'development' , :output => 'log/cron.log'
+end
+
+>>>>>>> eed9c3d082fbacb2165aac123dd16f5b25dbd9ce

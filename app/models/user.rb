@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
 
+<<<<<<< HEAD
   # after_create :assign_default_user_role
+=======
+  after_create :assign_default_user_role
+>>>>>>> eed9c3d082fbacb2165aac123dd16f5b25dbd9ce
 
   belongs_to :account, :inverse_of => :users
   #validates :account, :presence => true
@@ -18,9 +22,15 @@ class User < ActiveRecord::Base
 
   has_many :auditinits
 
+<<<<<<< HEAD
   # def assign_default_user_role
   #   add_role(:admin)
   # end
+=======
+  def assign_default_user_role
+    add_role(:admin)
+  end
+>>>>>>> eed9c3d082fbacb2165aac123dd16f5b25dbd9ce
 
   def self.min_send_mail
     @user =User.all

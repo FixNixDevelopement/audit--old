@@ -2,6 +2,54 @@
 <html>
 <head>
 	<title>FixNix Audit Management -- Dahsboard</title>
+<<<<<<< HEAD
+=======
+<script type="text/javascript">
+      $(function () {
+          $('#container').highcharts({
+              chart: {
+                  plotBackgroundColor: null,
+                  plotBorderWidth: null,
+                  plotShadow: false
+              },
+              title: {
+                  text: ' Audit shares for specific type '
+              },
+              tooltip: {
+                  pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+              },
+              plotOptions: {
+                  pie: {
+                      allowPointSelect: true,
+                      cursor: 'pointer',
+                      dataLabels: {
+                          enabled: true,
+                          color: '#000000',
+                          connectorColor: '#000000',
+                          format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                      }
+                  }
+              },
+              series: [{
+                  type: 'pie',
+                  name: 'Audit Counts',
+                  data: [
+                      ['Internal',  <% @intern.each do |inn| %>
+                                    <%= inn.count %>
+                   <% end %> ],
+                      ['External',       <% @extern.each do |enn| %>
+                                          <%= enn.count %>
+                                             <% end %>]
+
+                  ]
+              }]
+          });
+      });
+
+
+  </script>
+  
+>>>>>>> eed9c3d082fbacb2165aac123dd16f5b25dbd9ce
 </head>
 <body>
 
@@ -32,6 +80,21 @@
     </div>
   </div>
 </div>
+<<<<<<< HEAD
+=======
+
+<!-- End of count -->
+
+<div class="container"> 
+
+  <div class="row-fluid">
+    <div id="container" style="min-width: 600px; height: 400px;  float:left;">
+    </div>
+  </div>
+  
+</div>
+
+>>>>>>> eed9c3d082fbacb2165aac123dd16f5b25dbd9ce
 
 <!-- End of count -->
 </body>

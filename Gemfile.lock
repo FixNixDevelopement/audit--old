@@ -35,6 +35,10 @@ GEM
       sass (~> 3.2)
     builder (3.0.4)
     cancan (1.6.10)
+<<<<<<< HEAD
+=======
+    choice (0.1.6)
+>>>>>>> eed9c3d082fbacb2165aac123dd16f5b25dbd9ce
     chronic (0.10.2)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)

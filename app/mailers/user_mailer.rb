@@ -1,9 +1,14 @@
 class UserMailer < ActionMailer::Base
+<<<<<<< HEAD
   default from: 'venukumarb2012@yahoo.com'
+=======
+  default from: 'ghayathri@fixrnix.in'
+>>>>>>> eed9c3d082fbacb2165aac123dd16f5b25dbd9ce
  
   def welcome_email(user)
     @user = user
     mail(to: @user.email, subject: 'welcome')
+<<<<<<< HEAD
   end
 
   def reminder_email(audit)
@@ -18,3 +23,7 @@ class UserMailer < ActionMailer::Base
 
 
 end
+=======
+  end
+end
+>>>>>>> eed9c3d082fbacb2165aac123dd16f5b25dbd9ce

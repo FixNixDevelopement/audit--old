@@ -20,7 +20,11 @@
 			<li class="<%= 'active' if params[:controller] == 'dashboards' %>"><a href="/">Dashboard</a></li>
 
 			<li class="<%= 'active' if params[:controller] == 'calendars' %>"><a href="/calendars">Calendar</a></li>
+<<<<<<< HEAD
 			<li><a href="/mytaks">MyTask</a></li>
+=======
+			<li><a href="/">MyTask</a></li>
+>>>>>>> eed9c3d082fbacb2165aac123dd16f5b25dbd9ce
 			<%if can? :manage, Auditinit%>
 			<li class="<%= 'active' if params[:controller] == 'auditinits' %>"><a href="/auditinits">Audit Initiation</a></li>
 			<%end%>
@@ -31,7 +35,7 @@
 			
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-        	<li class="dropdown">
+        	<li class="dropdown <%= 'active' if params[:controller] == 'catvalues' %>">
           		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
           		<ul class="dropdown-menu">
             		<li><a href="/catvalues">Configure</a></li>
